@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Reminder Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        a{
+            text-decoration: none;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+
+    <aside class="sidebar">
+        <h2>TaskReminder</h2>
+        <ul>
+            <li><a href="#con1">Dashboard</a></li>
+            <li><a href="#con2">Tasks</a></li>
+            <li><a href="#con3">Reports</a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <h1>Dashboard</h1>
+
+
+        <div class="cards">
+            <div class="card total" id="totalTasks">0</div>
+            <div class="card completed" id="completedTasks">0</div>
+            <div class="card pending" id="pendingTasks">0</div>
+        </div>
+
+
+        <section class="box" id="con1">
+            <h2>Add Task</h2>
+            <div class="form">
+                <input id="title" placeholder="Title">
+                <input id="description" placeholder="Description">
+                <input id="email" placeholder="Email">
+                <input id="dueDate" type="datetime-local">
+                <button onclick="addTask()">Add</button>
+            </div>
+        </section>
+
+
+        <section class="box" id="con2">
+            <h2>Task List</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Due</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="taskTable"></tbody>
+            </table>
+        </section>
+
+
+        <button class="csv" id="con3" onclick="downloadCSV()">⬇ Export CSV</button>
+
+    </main>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
